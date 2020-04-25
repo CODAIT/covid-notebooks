@@ -74,6 +74,10 @@ conda install -y -c conda-forge \
 # Watson tooling requires pyyaml to be installed this way.
 pip install pyyaml
 
+# Temporary until we figure out why dependency installs on the Text Extensions
+# for Pandas pip package aren't working properly
+pip install memoized-property
+
 # Text Extensions for Pandas doesn't currently have a release, so pip install
 # directly off of github
 pip install --upgrade git+https://github.com/frreiss/text-extensions-for-pandas
