@@ -5,6 +5,8 @@ Jupyter notebooks that analyze COVID-19 time series data.
 
 ## Getting Started
 
+**WARNING: Do not run these notebooks from your system Python environment.**
+
 Use the following steps to create a consistent Python environment for running the
 notebooks in this repository:
 

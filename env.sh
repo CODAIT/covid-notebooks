@@ -52,31 +52,29 @@ conda activate ./${ENV_DIR}
 
 ################################################################################
 # Preferred way to install packages: Anaconda main
+
+# We currently can't use Anaconda main for most things because of the need for 
+# a single requirements.txt spanning all packages.
 conda install -y \
-    jupyterlab \
-    pandas \
-    regex \
-    matplotlib \
-    cython \
-    grpcio-tools \
-    scikit-learn
+    jupyterlab
+    
 
 ################################################################################
 # Second-best way to install packages: conda-forge
-conda install -y -c conda-forge \
-    pyarrow \
-    fastparquet \
-    plotly
+
+# We currently can't use conda-forge because of the need for a single 
+# requirements.txt.
+# conda install -y -c conda-forge ...
 
 ################################################################################
 # Third-best way to install packages: pip
 
+# We currently install nearly everything with pip due to the need for a 
+# single requirements.txt that works outside an Anaconda environment.
+pip install -r requirements.txt
+
 # Watson tooling requires pyyaml to be installed this way.
 pip install pyyaml
-
-# Temporary until we figure out why dependency installs on the Text Extensions
-# for Pandas pip package aren't working properly
-pip install memoized-property
 
 # Text Extensions for Pandas doesn't currently have a release, so pip install
 # directly off of github
