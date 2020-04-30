@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 import text_extensions_for_pandas as tp
 
+
 def collapse_time_series(df: pd.DataFrame,
                          ts_cols: Sequence[str]) -> pd.DataFrame:
     """
@@ -142,6 +143,12 @@ def graph_examples(
     row_indexes = np.random.choice(len(df_subset.index), 
                                    num_to_pick, replace=False)
     
+    # Generate a more human-readable name for the column
+    if col_name == "Confirmed":
+        readable_col_name = "Confirmed Cases"
+    else:
+        readable_col_name = col_name
+
     fig, axs = plt.subplots(num_plot_rows, num_plot_cols)
     fig.set_size_inches((8 * num_plot_cols, 5 * num_plot_rows))
     for i in range(len(row_indexes)):
@@ -157,10 +164,10 @@ def graph_examples(
         df_row = df_subset.iloc[ix]
         
         if len(curves.keys()) > 0:
-            plot_obj.set_title(f"{col_name} Cases in {df_row['County']} County, "
+            plot_obj.set_title(f"{readable_col_name} in {df_row['County']} County, "
                                f"{df_row['State']} vs {', '.join(curves.keys())}")
         else:
-            plot_obj.set_title(f"{col_name} Cases in {df_row['County']} County, "
+            plot_obj.set_title(f"{readable_col_name} in {df_row['County']} County, "
                                f"{df_row['State']}")
         
         actual_vals = df_row[col_name]
@@ -190,4 +197,4 @@ def graph_examples(
             plot_obj.plot(curve_vals, label=name)
             
     plt.show()
-    
+ 
