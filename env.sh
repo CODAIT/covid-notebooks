@@ -78,7 +78,7 @@ pip install pyyaml
 
 # Text Extensions for Pandas doesn't currently have a release, so pip install
 # directly off of github
-pip install --upgrade git+https://github.com/frreiss/text-extensions-for-pandas
+pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 
 ################################################################################
 # Least-preferred install method: Custom

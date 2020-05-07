@@ -38,4 +38,4 @@ def maybe_install_libs():
         # Then install Text Extensions directly from the master branch.
         os.system(
             "pip install --upgrade "
-            "git+https://github.com/frreiss/text-extensions-for-pandas")
+            "git+https://github.com/CODAIT/text-extensions-for-pandas")
