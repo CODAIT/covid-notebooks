@@ -2,7 +2,7 @@
 
 
 # Create conda environment to run the notebooks in this directory.
-# 
+#
 # By default, the environment will be located in the directory "env"
 # immediately under this one. To override that setting,
 # pass the subdirectory name as the first argument to this script, i.e.
@@ -14,13 +14,13 @@
 PYTHON_VERSION=3.7
 
 ############################
-# HACK ALERT *** HACK ALERT 
+# HACK ALERT *** HACK ALERT
 # The friendly folks at Anaconda thought it would be a good idea to make the
-# "conda" command a shell function. 
+# "conda" command a shell function.
 # See https://github.com/conda/conda/issues/7126
 # The following workaround will probably be fragile.
 if [ -z "$CONDA_HOME" ]
-then 
+then
     echo "Error: CONDA_HOME not set."
     exit
 fi
@@ -53,23 +53,22 @@ conda activate ./${ENV_DIR}
 ################################################################################
 # Preferred way to install packages: Anaconda main
 
-# We currently can't use Anaconda main for most things because of the need for 
+# We currently can't use Anaconda main for most things because of the need for
 # a single requirements.txt spanning all packages.
-conda install -y \
-    jupyterlab
-    
+conda install -y jupyterlab
+
 
 ################################################################################
 # Second-best way to install packages: conda-forge
 
-# We currently can't use conda-forge because of the need for a single 
+# We currently can't use conda-forge because of the need for a single
 # requirements.txt.
 # conda install -y -c conda-forge ...
 
 ################################################################################
 # Third-best way to install packages: pip
 
-# We currently install nearly everything with pip due to the need for a 
+# We currently install nearly everything with pip due to the need for a
 # single requirements.txt that works outside an Anaconda environment.
 pip install -r requirements.txt
 
@@ -87,9 +86,33 @@ pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 jupyter labextension install jupyterlab-plotly
 
 # Elyra
-pip install elyra
+pip install --upgrade --pre elyra
 jupyter lab build
 
+elyra-metadata install runtimes --schema_name=kfp \
+       --name=kfp-cloning \
+       --display_name="Kubeflow Pipeline (clonning)" \
+       --api_endpoint=http://cloning1.fyre.ibm.com:31380/pipeline \
+       --cos_endpoint=http://cloning1.fyre.ibm.com:31671 \
+       --cos_username=minio \
+       --cos_password=minio123 \
+       --cos_bucket=covid
+
+elyra-metadata install  runtime-images \
+    --schema_name=runtime-image \
+    --name=covid-anaconda \
+    --display_name="COVID with Anaconda Python 3" \
+    --image_name="lresende/anaconda3:latest"
+
+elyra-metadata list runtimes
+elyra-metadata list runtime-images
+
+jupyter --version
+echo " "
+jupyter serverextension list
+echo " "
+jupyter labextension list
+echo " "
 
 conda deactivate
 
