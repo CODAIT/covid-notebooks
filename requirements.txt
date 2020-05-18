@@ -1,12 +1,12 @@
 # requirements.txt
 # Python packages required by the code *inside* the notebooks in
-# this repository. Does *not* include packages necessary to 
+# this repository. Does *not* include packages necessary to
 # run JupyterLab.
 # Also does not currently include Text Extensions for Pandas,
 # which has not yet posted a release.
 pandas >= 1.0.3
 regex
-matplotlib
+matplotlib >= 3.2.1
 cython
 grpcio-tools
 scikit-learn
