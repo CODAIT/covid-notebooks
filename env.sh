@@ -83,7 +83,7 @@ pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 # Least-preferred install method: Custom
 
 # Plotly for JupyterLab
-jupyter labextension install jupyterlab-plotly
+jupyter labextension install jupyterlab-plotly --no-build
 
 # Elyra
 pip install --upgrade --pre elyra
