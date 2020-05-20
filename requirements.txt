@@ -4,13 +4,17 @@
 # run JupyterLab.
 # Also does not currently include Text Extensions for Pandas,
 # which has not yet posted a release.
-pandas >= 1.0.3
-regex
-matplotlib >= 3.2.1
 cython
-grpcio-tools
-scikit-learn
-pyarrow
 fastparquet
-plotly
+grpcio-tools
+matplotlib >= 3.2.1
 memoized-property
+numpy
+pandas >= 1.0.3
+plotly
+pyarrow
+regex
+scikit-learn
+scipy
+seaborn
+xlrd
