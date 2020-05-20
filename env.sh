@@ -83,13 +83,14 @@ pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 # Least-preferred install method: Custom
 
 # Plotly for JupyterLab
-jupyter labextension install jupyterlab-plotly
+jupyter labextension install jupyterlab-plotly --no-build
 
 # Elyra
 pip install --upgrade --pre elyra
 jupyter lab build
 
-elyra-metadata install runtimes --schema_name=kfp \
+elyra-metadata install runtimes --replace=true \
+       --schema_name=kfp \
        --name=kfp-cloning \
        --display_name="Kubeflow Pipeline (clonning)" \
        --api_endpoint=http://cloning1.fyre.ibm.com:31380/pipeline \
@@ -98,7 +99,7 @@ elyra-metadata install runtimes --schema_name=kfp \
        --cos_password=minio123 \
        --cos_bucket=covid
 
-elyra-metadata install  runtime-images \
+elyra-metadata install  runtime-images --replace=true \
     --schema_name=runtime-image \
     --name=covid-anaconda \
     --display_name="COVID with Anaconda Python 3" \
