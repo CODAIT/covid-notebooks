@@ -37,7 +37,7 @@ notebooks in this repository:
 
 [Elyra's Notebook pipeline visual editor](https://elyra.readthedocs.io/en/latest/getting_started/overview.html#notebook-pipelines-visual-editor)
 currently supports running these pipelines in a Kubeflow Pipeline runtime.  If required, these are
-[the steps to install a local deployment of KFP](https://elyra.readthedocs.io/en/latest/developer_guide/deploying-kubeflow-locally-for-dev.html).
+[the steps to install a local deployment of KFP](https://elyra.readthedocs.io/en/latest/recipes/deploying-kubeflow-locally-for-dev.html).
 
 After installing your Kubeflow Pipeline runtime, use the command below (with proper updates) to configure the new
 KFP runtime with Elyra.
