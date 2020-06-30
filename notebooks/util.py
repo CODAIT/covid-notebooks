@@ -3,6 +3,7 @@
 #
 # Shared utility functions used by the notebooks in this directory.
 
+import os
 from typing import *
 import pandas as pd
 import numpy as np
@@ -198,3 +199,7 @@ def graph_examples(
             
     plt.show()
  
+# Ensure output directory exists
+def ensure_dir_exists(path):
+    """Ensures the directory specified by path exists, creating if necessary."""
+    os.makedirs(path, mode=0o755, exist_ok=True)
