@@ -1,1 +1,503 @@
-{"doc_type":"pipeline","version":"3.0","json_schema":"http://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json","id":"0e39c09e-e477-47f6-b4a2-68244c46ef1e","primary_pipeline":"bc5123a3-4e26-4db1-b17e-77f150b26ffc","pipelines":[{"id":"bc5123a3-4e26-4db1-b17e-77f150b26ffc","nodes":[{"id":"58f6dde7-bd2b-42f4-b681-e2176b47e0cd","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/etl_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"dependencies":[],"outputs":["outputs/us_counties.csv","outputs/us_counties_meta.json"],"recursive_dependencies":true,"ui_data":{"label":"etl_us_data","image":"data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":31.04736328125,"y_pos":164,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}}}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"130d1e75-9585-480b-8c98-c86aaf051159","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/clean_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"outputs":["outputs/us_counties_clean.csv","outputs/us_counties_clean_meta.json"],"dependencies":["inputs/co-est2019-alldata.csv"],"recursive_dependencies":true,"ui_data":{"label":"clean_us_data","image":"data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":308.0000305175781,"y_pos":277,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}},"links":[{"node_id_ref":"58f6dde7-bd2b-42f4-b681-e2176b47e0cd","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"cfc8ddfe-9d68-4315-88c3-cfb8f41bc76a","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/etl_us_census.ipynb","image":"lresende/anaconda3:latest","vars":[],"dependencies":[],"recursive_dependencies":true,"outputs":["outputs/us_counties_income.csv"],"ui_data":{"label":"etl_us_census","image":"data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":54,"y_pos":22,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}}}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"df2e46c1-c7ea-4cb6-a17c-1f6b8ceded13","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/demographics_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"dependencies":["util.py"],"recursive_dependencies":false,"ui_data":{"label":"demographics_us_data","image":"data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":526,"y_pos":61,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"label":""}},"links":[{"node_id_ref":"cfc8ddfe-9d68-4315-88c3-cfb8f41bc76a","port_id_ref":"outPort"},{"node_id_ref":"130d1e75-9585-480b-8c98-c86aaf051159","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"label":""}}}]},{"id":"884bbad3-6200-4faa-b169-0cd17cee40a4","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/fit_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"recursive_dependencies":false,"outputs":["outputs/us_counties_curves.csv","outputs/us_counties_curves_meta.json","outputs/us_counties_curves_params.csv"],"dependencies":["util.py"],"ui_data":{"label":"fit_us_data","image":"data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":614,"y_pos":185,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}},"links":[{"node_id_ref":"130d1e75-9585-480b-8c98-c86aaf051159","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"b6a0fb39-09c8-4e0a-b253-d0492c2c0a76","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/analyze_fit_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"recursive_dependencies":false,"dependencies":["util.py"],"ui_data":{"label":"analyze_fit_us_data","image":"data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":846,"y_pos":177,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}},"links":[{"node_id_ref":"884bbad3-6200-4faa-b169-0cd17cee40a4","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"b6301aad-775d-4c6b-bdb7-59a1e56e08a4","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/maps_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"recursive_dependencies":false,"dependencies":["util.py"],"ui_data":{"label":"maps_us_data","image":"data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":648,"y_pos":284,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":1},"label":"Input Port"}},"links":[{"node_id_ref":"130d1e75-9585-480b-8c98-c86aaf051159","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"cardinality":{"min":0,"max":-1},"label":"Output Port"}}}]},{"id":"7b28323b-cd53-4d3f-971d-fde296fa0082","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/tables_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"recursive_dependencies":false,"dependencies":["util.py"],"ui_data":{"label":"tables_us_data","image":"data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":652.2852783203125,"y_pos":356.70025634765625,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"label":""}},"links":[{"node_id_ref":"130d1e75-9585-480b-8c98-c86aaf051159","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"label":""}}}]},{"id":"cf08f306-12d6-4d87-a929-85e0430bfacd","type":"execution_node","op":"execute-notebook-node","app_data":{"artifact":"notebooks/timeseries_us_data.ipynb","image":"lresende/anaconda3:latest","vars":[],"recursive_dependencies":false,"dependencies":["util.py"],"ui_data":{"label":"timeseries_us_data","image":"data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A","x_pos":600.0262756347656,"y_pos":447.4219970703125,"description":"Notebook file"}},"inputs":[{"id":"inPort","app_data":{"ui_data":{"label":""}},"links":[{"node_id_ref":"130d1e75-9585-480b-8c98-c86aaf051159","port_id_ref":"outPort"}]}],"outputs":[{"id":"outPort","app_data":{"ui_data":{"label":""}}}]}],"app_data":{"ui_data":{"comments":[]}},"runtime_ref":""}],"schemas":[]}
+{
+  "doc_type": "pipeline",
+  "version": "3.0",
+  "json_schema": "http://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "id": "0e39c09e-e477-47f6-b4a2-68244c46ef1e",
+  "primary_pipeline": "bc5123a3-4e26-4db1-b17e-77f150b26ffc",
+  "pipelines": [
+    {
+      "id": "bc5123a3-4e26-4db1-b17e-77f150b26ffc",
+      "nodes": [
+        {
+          "id": "58f6dde7-bd2b-42f4-b681-e2176b47e0cd",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "outputs": [
+              "outputs/us_counties.csv",
+              "outputs/us_counties_meta.json"
+            ],
+            "filename": "notebooks/etl_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "etl_us_data",
+              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 31.04736328125,
+              "y_pos": 164,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "130d1e75-9585-480b-8c98-c86aaf051159",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "outputs": [
+              "outputs/us_counties_clean.csv",
+              "outputs/us_counties_clean_meta.json"
+            ],
+            "dependencies": [
+              "util.py",
+              "inputs/co-est2019-alldata.csv"
+            ],
+            "filename": "notebooks/clean_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "clean_us_data",
+              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 308.0000305175781,
+              "y_pos": 277,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "58f6dde7-bd2b-42f4-b681-e2176b47e0cd",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "cfc8ddfe-9d68-4315-88c3-cfb8f41bc76a",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "inputs/ACS*",
+              "util.py"
+            ],
+            "outputs": [
+              "outputs/us_counties_income.csv"
+            ],
+            "filename": "notebooks/etl_us_census.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "etl_us_census",
+              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 54,
+              "y_pos": 22,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "df2e46c1-c7ea-4cb6-a17c-1f6b8ceded13",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/demographics_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "demographics_us_data",
+              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 526,
+              "y_pos": 61,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "cfc8ddfe-9d68-4315-88c3-cfb8f41bc76a",
+                  "port_id_ref": "outPort"
+                },
+                {
+                  "node_id_ref": "130d1e75-9585-480b-8c98-c86aaf051159",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "884bbad3-6200-4faa-b169-0cd17cee40a4",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "outputs": [
+              "outputs/us_counties_curves.csv",
+              "outputs/us_counties_curves_meta.json",
+              "outputs/us_counties_curves_params.csv"
+            ],
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/fit_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "fit_us_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 614,
+              "y_pos": 185,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "130d1e75-9585-480b-8c98-c86aaf051159",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "b6a0fb39-09c8-4e0a-b253-d0492c2c0a76",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/analyze_fit_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "analyze_fit_us_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 846,
+              "y_pos": 176,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "884bbad3-6200-4faa-b169-0cd17cee40a4",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "b6301aad-775d-4c6b-bdb7-59a1e56e08a4",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/maps_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "maps_us_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 648,
+              "y_pos": 284,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "130d1e75-9585-480b-8c98-c86aaf051159",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "7b28323b-cd53-4d3f-971d-fde296fa0082",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/tables_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "tables_us_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 652.2852783203125,
+              "y_pos": 356.70025634765625,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "130d1e75-9585-480b-8c98-c86aaf051159",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "cf08f306-12d6-4d87-a929-85e0430bfacd",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "dependencies": [
+              "util.py"
+            ],
+            "filename": "notebooks/timeseries_us_data.ipynb",
+            "runtime_image": "lresende/anaconda3:latest",
+            "env_vars": [],
+            "include_subdirectories": false,
+            "ui_data": {
+              "label": "timeseries_us_data",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "x_pos": 600.0262756347656,
+              "y_pos": 447.4219970703125,
+              "description": "Notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              },
+              "links": [
+                {
+                  "node_id_ref": "130d1e75-9585-480b-8c98-c86aaf051159",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "label": ""
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "app_data": {
+        "ui_data": {
+          "comments": []
+        },
+        "version": 1
+      },
+      "runtime_ref": ""
+    }
+  ],
+  "schemas": []
+}
