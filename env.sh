@@ -87,7 +87,7 @@ pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 jupyter labextension install jupyterlab-plotly --no-build
 
 # Elyra
-pip install --upgrade --pre elyra==0.11.0rc2 kfp-notebook==0.8.2
+pip install --upgrade --pre elyra
 jupyter lab build
 
 elyra-metadata install runtimes --replace=true \
