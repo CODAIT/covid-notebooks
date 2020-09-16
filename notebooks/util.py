@@ -102,12 +102,14 @@ def explode_time_series(df: pd.DataFrame, dates: np.ndarray):
         # to construct a new two-level index
         index = pd.MultiIndex.from_product([[fips], dates], 
                                            names=[df.index.name, "Date"])
-        return pd.DataFrame(
-            {
-                name: row_as_series.loc[name]
-                for name in row_as_series.index
-            }, index=index)
-
+        df_contents = {
+            name: (row_as_series.loc[name].to_numpy()
+                   if isinstance(row_as_series.loc[name], tp.TensorElement)
+                   else row_as_series.loc[name])
+            for name in row_as_series.index
+        }
+        return pd.DataFrame(df_contents, index=index)
+    
     return pd.concat([row_to_dataframe(entry) for entry in df.index])
 
 
