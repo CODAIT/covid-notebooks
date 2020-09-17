@@ -104,7 +104,7 @@ elyra-metadata install  runtime-images --replace=true \
     --schema_name=runtime-image \
     --name=covid-anaconda \
     --display_name="COVID with Anaconda Python 3" \
-    --image_name="lresende/anaconda3:latest"
+    --image_name="codait/covid-notebooks-anaconda-py3:latest"
 
 elyra-metadata list runtimes
 elyra-metadata list runtime-images
