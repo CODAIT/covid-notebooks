@@ -205,3 +205,11 @@ def graph_examples(
 def ensure_dir_exists(path):
     """Ensures the directory specified by path exists, creating if necessary."""
     os.makedirs(path, mode=0o755, exist_ok=True)
+    
+def example_main_function():
+    print("Hello from the main() function in util.py!")
+
+if __name__ == "__main__":
+    example_main_function()
+
+    
