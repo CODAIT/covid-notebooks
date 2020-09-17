@@ -92,10 +92,10 @@ jupyter lab build
 
 elyra-metadata install runtimes --replace=true \
        --schema_name=kfp \
-       --name=kfp-cloning \
-       --display_name="Kubeflow Pipeline (clonning)" \
-       --api_endpoint=http://cloning1.fyre.ibm.com:31380/pipeline \
-       --cos_endpoint=http://cloning1.fyre.ibm.com:31671 \
+       --name=kfp-shared \
+       --display_name="Kubeflow Pipeline (devises)" \
+       --api_endpoint=http://devises1.fyre.ibm.com:32235/pipeline \
+       --cos_endpoint=http://devises1.fyre.ibm.com:31323 \
        --cos_username=minio \
        --cos_password=minio123 \
        --cos_bucket=covid
@@ -104,7 +104,7 @@ elyra-metadata install  runtime-images --replace=true \
     --schema_name=runtime-image \
     --name=covid-anaconda \
     --display_name="COVID with Anaconda Python 3" \
-    --image_name="lresende/anaconda3:latest"
+    --image_name="codait/covid-notebooks-anaconda-py3:latest"
 
 elyra-metadata list runtimes
 elyra-metadata list runtime-images

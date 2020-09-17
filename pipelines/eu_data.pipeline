@@ -17,7 +17,7 @@
               "cases.csv"
             ],
             "filename": "notebooks/etl_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "etl_eu_data",
@@ -65,7 +65,7 @@
               "cases_features.csv"
             ],
             "filename": "notebooks/features_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "features_eu_data",
@@ -108,7 +108,7 @@
           "op": "execute-notebook-node",
           "app_data": {
             "filename": "notebooks/exploratory_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "exploratory_eu_data",
@@ -155,7 +155,7 @@
             ],
             "dependencies": [],
             "filename": "notebooks/pivot_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "pivot_eu_data",
@@ -206,7 +206,7 @@
           "op": "execute-notebook-node",
           "app_data": {
             "filename": "notebooks/pivot_analysis_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "pivot_analysis_eu_data",
@@ -257,7 +257,7 @@
           "op": "execute-notebook-node",
           "app_data": {
             "filename": "notebooks/model_gaussfit_eu_data.ipynb",
-            "runtime_image": "lresende/anaconda3:latest",
+            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
             "env_vars": [],
             "ui_data": {
               "label": "model_gaussfit_eu_data",
