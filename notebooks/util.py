@@ -65,14 +65,14 @@ def collapse_time_series(df: pd.DataFrame,
     #    np.tile(ts_times, num_id_values).reshape([num_id_values, -1])
     # )
     
+    # Take advantage of the fact that the backing array is in index order
     for ts_col in ts_cols:
-        # Build up a list of numpy views on the source dataframe
-        to_stack = [
-            df.loc[id_value][ts_col].values for id_value in id_values
-        ]
-        # Concatenate all the views into a single new array, then
-        # wrap that array in a column of our output dataframe.
-        result[ts_col] = tp.TensorArray(np.stack(to_stack))
+        reshaped_data = (
+            df[ts_col]
+            .to_numpy()
+            .reshape([-1, len(ts_times)])
+        )
+        result[ts_col] = tp.TensorArray(reshaped_data)
 
     times = df.index.levels[1].values
         

@@ -56,7 +56,6 @@ conda activate ./${ENV_DIR}
 # We currently can't use Anaconda main for most things because of the need for
 # a single requirements.txt spanning all packages.
 conda install -y jupyterlab
-conda install -y numpy
 
 
 ################################################################################
@@ -72,13 +71,6 @@ conda install -y numpy
 # We currently install nearly everything with pip due to the need for a
 # single requirements.txt that works outside an Anaconda environment.
 pip install -r requirements.txt
-
-# Watson tooling requires pyyaml to be installed this way.
-pip install pyyaml
-
-# Text Extensions for Pandas doesn't currently have a release, so pip install
-# directly off of github
-pip install --upgrade git+https://github.com/CODAIT/text-extensions-for-pandas
 
 ################################################################################
 # Least-preferred install method: Custom
