@@ -56,7 +56,7 @@ conda activate ./${ENV_DIR}
 # We currently can't use Anaconda main for most things because of the need for
 # a single requirements.txt spanning all packages.
 conda install -y jupyterlab
-
+conda install -y -c conda-forge/label/main nodejs
 
 ################################################################################
 # Second-best way to install packages: conda-forge
