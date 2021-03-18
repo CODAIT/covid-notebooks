@@ -55,7 +55,7 @@ conda activate ./${ENV_DIR}
 
 # We currently can't use Anaconda main for most things because of the need for
 # a single requirements.txt spanning all packages.
-conda install -y jupyterlab
+conda install -y -c conda-forge jupyterlab
 conda install -y -c conda-forge/label/main nodejs
 
 ################################################################################
@@ -79,7 +79,7 @@ pip install -r requirements.txt
 jupyter labextension install jupyterlab-plotly --no-build
 
 # Elyra
-pip install --upgrade --pre elyra
+pip install --upgrade --use-deprecated=legacy-resolver elyra
 jupyter lab build
 
 elyra-metadata install runtimes --replace=true \
