@@ -82,16 +82,6 @@ jupyter labextension install jupyterlab-plotly --no-build
 pip install --upgrade --use-deprecated=legacy-resolver elyra
 jupyter lab build
 
-elyra-metadata install runtimes --replace=true \
-       --schema_name=kfp \
-       --name=kfp-shared \
-       --display_name="Kubeflow Pipeline (devises)" \
-       --api_endpoint=http://devises1.fyre.ibm.com:32235/pipeline \
-       --cos_endpoint=http://devises1.fyre.ibm.com:31323 \
-       --cos_username=minio \
-       --cos_password=minio123 \
-       --cos_bucket=covid
-
 elyra-metadata install  runtime-images --replace=true \
     --schema_name=runtime-image \
     --name=covid-anaconda \
