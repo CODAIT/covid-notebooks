@@ -9,9 +9,7 @@
 #
 # $ ./env.sh my_dir_name
 
-# Use Python 3.7 for now because TensorFlow and JupyterLab don't support 3.8
-# yet.
-PYTHON_VERSION=3.7
+PYTHON_VERSION=3.8
 
 ############################
 # HACK ALERT *** HACK ALERT
@@ -47,7 +45,7 @@ echo "Creating an Anaconda environment at ./${ENV_DIR}"
 # Remove the detrius of any previous runs of this script
 rm -rf ./${ENV_DIR}
 
-conda create -y -p ${ENV_DIR} python=${PYTHON_VERSION}
+conda create -y -p ${ENV_DIR} python=${PYTHON_VERSION} pip
 conda activate ./${ENV_DIR}
 
 ################################################################################
