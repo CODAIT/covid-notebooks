@@ -13,24 +13,26 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "outputs": [
-              "outputs/us_counties.csv",
-              "outputs/us_counties_meta.json"
-            ],
-            "filename": "../notebooks/etl_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "etl_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "outputs": [
+                "outputs/us_counties.csv",
+                "outputs/us_counties_meta.json"
+              ],
+              "filename": "../notebooks/etl_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "etl_us_data",
-              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 48,
               "y_pos": 301,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -67,27 +69,29 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "outputs": [
-              "outputs/us_counties_clean.csv",
-              "outputs/us_counties_clean_meta.json",
-              "outputs/us_counties_clean.feather",
-              "outputs/dates.feather"
-            ],
-            "dependencies": [
-              "util.py",
-              "inputs/co-est2019-alldata.csv"
-            ],
-            "filename": "../notebooks/clean_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "clean_us_data",
+            "component_parameters": {
+              "outputs": [
+                "outputs/us_counties_clean.csv",
+                "outputs/us_counties_clean_meta.json",
+                "outputs/us_counties_clean.feather",
+                "outputs/dates.feather"
+              ],
+              "dependencies": [
+                "util.py",
+                "inputs/co-est2019-alldata.csv"
+              ],
+              "filename": "../notebooks/clean_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "clean_us_data",
-              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 290,
               "y_pos": 300,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -131,24 +135,26 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "inputs/ACS*",
-              "util.py"
-            ],
-            "outputs": [
-              "outputs/us_counties_income.csv"
-            ],
-            "filename": "../notebooks/etl_us_census.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "etl_us_census",
+            "component_parameters": {
+              "dependencies": [
+                "inputs/ACS*",
+                "util.py"
+              ],
+              "outputs": [
+                "outputs/us_counties_income.csv"
+              ],
+              "filename": "../notebooks/etl_us_census.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "etl_us_census",
-              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 51,
               "y_pos": 59,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -185,20 +191,22 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/demographics_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "demographics_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/demographics_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "demographics_us_data",
-              "image": "data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%2022%2022%22%20style%3D%22enable-background%3Anew%200%200%2022%2022%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%09%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%09%09%3Cpath%20class%3D%22st1%22%20d%3D%22M18.7%2C3.3v15.4H3.3V3.3H18.7%20M20.2%2C1.8H1.8v18.3h18.3l0%2C0L20.2%2C1.8L20.2%2C1.8z%22%2F%3E%0A%09%09%3Cpolygon%20class%3D%22st1%22%20points%3D%2216.5%2C16.5%2011.1%2C12.2%205.5%2C16.5%205.5%2C5.5%2016.5%2C5.5%20%09%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
+              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 681,
               "y_pos": 54,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -239,25 +247,27 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "outputs": [
-              "outputs/us_counties_curves.csv",
-              "outputs/us_counties_curves_meta.json",
-              "outputs/us_counties_curves_params.csv"
-            ],
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/fit_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "fit_us_data",
+            "component_parameters": {
+              "outputs": [
+                "outputs/us_counties_curves.csv",
+                "outputs/us_counties_curves_meta.json",
+                "outputs/us_counties_curves_params.csv"
+              ],
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/fit_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "fit_us_data",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 625,
               "y_pos": 168,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -301,20 +311,22 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/analyze_fit_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "analyze_fit_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/analyze_fit_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "analyze_fit_us_data",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 913,
               "y_pos": 117,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -358,20 +370,22 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/maps_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "maps_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/maps_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "maps_us_data",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 681,
-              "y_pos": 296,
-              "description": "Notebook file"
+              "y_pos": 295,
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -415,20 +429,22 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/tables_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "tables_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/tables_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "tables_us_data",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 681,
-              "y_pos": 416,
-              "description": "Notebook file"
+              "y_pos": 415,
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -464,20 +480,22 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "dependencies": [
-              "util.py"
-            ],
-            "filename": "../notebooks/timeseries_us_data.ipynb",
-            "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
-            "env_vars": [],
-            "include_subdirectories": false,
-            "invalidNodeError": null,
+            "label": "timeseries_us_data",
+            "component_parameters": {
+              "dependencies": [
+                "util.py"
+              ],
+              "filename": "../notebooks/timeseries_us_data.ipynb",
+              "runtime_image": "codait/covid-notebooks-anaconda-py3:latest",
+              "env_vars": [],
+              "include_subdirectories": false
+            },
             "ui_data": {
               "label": "timeseries_us_data",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
               "x_pos": 681,
               "y_pos": 536,
-              "description": "Notebook file"
+              "description": "Run notebook file"
             }
           },
           "inputs": [
@@ -516,8 +534,8 @@
               "id": "3dd01e9b-3ec7-4179-bd72-e03bd6f7b281",
               "x_pos": 913,
               "y_pos": 248,
-              "width": 65,
-              "height": 27,
+              "width": 75,
+              "height": 33,
               "class_name": "d3-comment-rect",
               "content": "Analyze",
               "associated_id_refs": [
@@ -543,7 +561,7 @@
               "x_pos": 55,
               "y_pos": 186,
               "width": 147,
-              "height": 27,
+              "height": 50,
               "class_name": "d3-comment-rect",
               "content": "Extract and Transform",
               "associated_id_refs": [
@@ -560,7 +578,7 @@
               "x_pos": 339,
               "y_pos": 188,
               "width": 63,
-              "height": 28,
+              "height": 36,
               "class_name": "d3-comment-rect",
               "content": "Clean",
               "associated_id_refs": [
@@ -573,8 +591,8 @@
               "id": "68b1222d-08ba-474f-a5eb-198a9dd148b0",
               "x_pos": 679,
               "y_pos": 229,
-              "width": 56,
-              "height": 28,
+              "width": 66,
+              "height": 36,
               "class_name": "d3-comment-rect",
               "content": "Model",
               "associated_id_refs": [
@@ -585,7 +603,11 @@
             }
           ]
         },
-        "version": 3
+        "version": 7,
+        "properties": {
+          "name": "us_data",
+          "runtime": "Generic"
+        }
       },
       "runtime_ref": ""
     }
