@@ -1,3 +1,6 @@
+# Jupyter temp files
+.virtual_documents
+
 # Local anaconda environment
 env
 
